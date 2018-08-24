@@ -10,5 +10,9 @@
 
 !/.emacs
 
+# bash
 !/.bashrc
 !/.profile
+
+# tmux
+!/.tmux.conf
