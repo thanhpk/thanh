@@ -17,4 +17,7 @@
 # tmux
 !/.tmux.conf
 
-!.gitconfig
+!/.gitconfig
+
+# vim
+!/.vimrc
