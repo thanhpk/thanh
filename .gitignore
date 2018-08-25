@@ -14,10 +14,15 @@
 !/.bashrc
 !/.profile
 
+!/.gitconfig
+
 # tmux
 !/.tmux.conf
 
-!/.gitconfig
-
 # vim
 !/.vimrc
+
+!/.gcp
+
+!/.kubernetes
+

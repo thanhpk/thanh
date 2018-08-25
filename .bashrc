@@ -117,58 +117,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-# PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u\[\e[90m\]@\h \[\e[33m\]\w \[\e[32m\]\n\$ \[\e[0m\]'
-PS1='\[\e[32m\]\u\[\e[90m\]@\h \[\e[33m\]\w \[\e[32m\]\n$ \[\e[0m\]'
 
-# PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u\[\e[90m\]@\h \[\e[33m\]\w \[\e[32m\]\n\$ \[\e[0m\]'
-parse_git_branch() {
-    b=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-		if [ "$b" == "master" ]; then
-				echo '丈'
-				return
-		fi
-		echo $b
-}
-
-get_current_kubectl_context() {
-		a=$(echo $KUBECTL_CONTEXT | cut -d '@' -f 2 | cut -b 1-5)
-
-		if [ "$a" == "kuber" ]; then
-				echo 'DEV'
-				return
-		fi
-		if [ "$a" == "gke_s" ]; then
-				echo 'GKE'
-				return
-		fi
-		echo $a
-}
-
-PS1='\[\e[32m\]\[\e[33m\]\w \e[39m\e[41m $(get_current_kubectl_context) \e[42m$(parse_git_branch)\e[49m\[\e[90m\]\n舎 \[\e[0m\]'
-
-source <(kubectl completion bash)
-setxkbmap -option ctrl:nocaps
-
-export DEV=true
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/thanh/google-cloud-sdk/path.bash.inc' ]; then source '/home/thanh/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/thanh/google-cloud-sdk/completion.bash.inc' ]; then source '/home/thanh/google-cloud-sdk/completion.bash.inc'; fi
-
-export KUBECTL_CONTEXT=kubernetes-admin@kubernetes
-alias kubectl='kubectl --context="$KUBECTL_CONTEXT"'
-alias stern='stern --context="$KUBECTL_CONTEXT"'
-
-function usegke() {
-	export KUBECTL_CONTEXT=gke_subiz-version-4_us-central1-a_app-cluster-1
-}
-
-function usegke2() {
-	export KUBECTL_CONTEXT=gke_subiz-version-4_us-central1-a_app-cluster-2
-}
-
-function usedev() {
-	export KUBECTL_CONTEXT=kubernetes-admin@kubernetes
-}
+. .profile
