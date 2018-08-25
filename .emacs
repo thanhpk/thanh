@@ -392,8 +392,6 @@ Version 2017-07-08"
 ;;(global-set-key (kbd "s-p") 'yank-pop)
 ;;(global-set-key (kbd "s-j") 'electric-newline-and-maybe-indent)
 ;;(global-set-key (kbd "s-h") 'backward-delete-char-untabify)
-(global-set-key (kbd "M-I") 'other-window)
-(global-set-key (kbd "M-U") 'other-frame)
 ;;(global-set-key (kbd "s-/") 'undo)
 ;;global-set-key
 ;;(define-key key-translation-map "\s-q" (kbd "\C-g"))
@@ -509,6 +507,13 @@ Version 2016-11-22"
 (global-set-key (kbd "C-a") 'save-buffer)
 (global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "C-d") nil)
+(global-set-key (kbd "M-0") 'back-to-identation)
+(global-set-key (kbd "M-g t") 'other-window)
+(global-set-key (kbd "M-:") 'goto-line)
+(global-set-key (kbd "C-p") 'pop-to-mark-command)
+
+;; (global-set-key (kbd "M-U") 'other-frame)
+
 ;;(global-DieIf-key  (kbd "C-n") 'goto-line)
 ;;(global-set-key (kbd "M-p") 'goto-line)
 ;;(global-set-key (kbd "C-f") nil)
