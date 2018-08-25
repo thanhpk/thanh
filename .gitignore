@@ -16,3 +16,5 @@
 
 # tmux
 !/.tmux.conf
+
+!.gitconfig
