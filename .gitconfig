@@ -29,3 +29,5 @@ lg = !"git lg1"
 
 [http]
 	cookiefile = /home/thanh/.gitcookies
+[credential]
+	helper = store
