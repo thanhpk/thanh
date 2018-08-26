@@ -3,31 +3,31 @@ alias kubectl='kubectl --context="$KUBECTL_CONTEXT"'
 alias stern='stern --context="$KUBECTL_CONTEXT"'
 
 function usegke() {
-	export KUBECTL_CONTEXT=gke_subiz-version-4_us-central1-a_app-cluster-1
+		export KUBECTL_CONTEXT=gke_subiz-version-4_us-central1-a_app-cluster-1
 }
 
 function usegke2() {
-	export KUBECTL_CONTEXT=gke_subiz-version-4_us-central1-a_app-cluster-2
+		export KUBECTL_CONTEXT=gke_subiz-version-4_us-central1-a_app-cluster-2
 }
 
 function usedev() {
-	export KUBECTL_CONTEXT=kubernetes-admin@kubernetes
+		export KUBECTL_CONTEXT=kubernetes-admin@kubernetes
 }
 
 get_current_kubectl_context() {
 		a=$(echo $KUBECTL_CONTEXT | cut -d '@' -f 2 | cut -b 1-5)
 
 		if [ "$a" == "kuber" ]; then
-				echo 'DEV'
+				echo 'dev'
 				return
 		fi
 		if [ "$a" == "gke_s" ]; then
-				echo 'GKE'
+				echo 'gke'
 				return
 		fi
 		echo $a
 }
 
 if hash kubectl 2>/dev/null; then
-	 source <(kubectl completion bash)
+		source <(kubectl completion bash)
 fi
