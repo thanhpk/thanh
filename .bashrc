@@ -119,3 +119,5 @@ if ! shopt -oq posix; then
 fi
 
 . .profile
+
+complete -C /usr/local/bin/vault vault
