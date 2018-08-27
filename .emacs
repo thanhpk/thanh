@@ -21,6 +21,7 @@
  '(custom-enabled-themes (quote (leuven)))
  '(fci-rule-color "#efefef")
  '(fill-nobreak-invisible nil)
+ '(fish-indent-offset 2)
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(flycheck-go-build-install-deps nil)
  '(font-lock-global-modes (quote (not speedbar-mode)))
@@ -54,7 +55,7 @@
 		("#032f62" "#6a737d" "#d73a49" "#6a737d" "#005cc5" "#6f42c1" "#d73a49" "#6a737d")))
  '(package-selected-packages
 	 (quote
-		(flycheck ido-vertical-mode pug-mode go-imports direx dired+ color-theme-sanityinc-tomorrow java-imports java-snippets javadoc-lookup javap-mode yaml-mode persistent-scratch scratches dockerfile-mode python-docstring govet hydandata-light-theme material-theme delight dired-icon diminish gitignore-mode toml-mode json-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode highlight-tail mode-icons python-mode pyvenv auto-dim-other-buffers ob-go rainbow-delimiters jump-char avy cql-mode go-guru golint nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## ac-js2 list-packages-ext helm-projectile tide markdown-mode go-mode)))
+		(fish-mode hcl-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ color-theme-sanityinc-tomorrow java-imports java-snippets javadoc-lookup javap-mode yaml-mode persistent-scratch scratches dockerfile-mode python-docstring govet hydandata-light-theme material-theme delight dired-icon diminish gitignore-mode toml-mode json-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode highlight-tail mode-icons python-mode pyvenv auto-dim-other-buffers ob-go rainbow-delimiters jump-char avy cql-mode go-guru golint nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## ac-js2 list-packages-ext helm-projectile tide markdown-mode go-mode)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -65,6 +66,7 @@
  '(scala-indent:step 2)
  '(scroll-bar-mode nil)
  '(semantic-stickyfunc-indent-string "")
+ '(sh-basic-offset 2)
  '(show-paren-mode t)
  '(sml/active-background-color "#34495e")
  '(sml/active-foreground-color "#ecf0f1")
