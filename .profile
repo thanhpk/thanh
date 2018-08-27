@@ -1,5 +1,8 @@
 # . .alias
 source /etc/environment
+
+alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
+
 . .kubernetes
 . .gcp
 
