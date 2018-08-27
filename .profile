@@ -14,73 +14,71 @@ setxkbmap -option ctrl:nocaps
 
 # PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u\[\e[90m\]@\h \[\e[33m\]\w \[\e[32m\]\n\$ \[\e[0m\]'
 parse_git_branch() {
-		b=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-		homedir=$(getent passwd "$USER" | cut -d: -f6)
-		top=$(git rev-parse --show-toplevel)
-		if [ "$top" == "$homedir" ]; then
-				return
-		fi
-		#if [ "$b" == "master" ]; then
-		#	echo 'M'
-		#	return
-		#fi
+	b=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+	if [ "$b" != "" ]; then
+		echo [$b]
+	else
 		echo $b
+	fi
 }
 
 parse_docker_username() {
-		if hash docker 2>/dev/null && hash jq  2>/dev/null; then
-				d=$(cat ~/.docker/config.json  | jq .auths.\"https://index.docker.io/v1/\".auth -c -M -r | base64 -d | cut -d":" -f1)
-				echo "(d/$d)"
+	if hash docker 2>/dev/null && hash jq  2>/dev/null; then
+		d=$(cat ~/.docker/config.json  | jq .auths.\"https://index.docker.io/v1/\".auth -c -M -r | base64 -d | cut -d":" -f1)
+		if [ "$d" != "" ]; then
+			echo "d/$d"
 		fi
+	fi
 }
 
-function c_red_white() {
-		echo -e "\e[41m\e[97m"
+c_red_white() {
+	echo -e "\e[41m\e[97m"
 }
 
-function c_white_yellow() {
-		echo -e "\e[32m\e[33m"
+c_white_yellow() {
+	echo -e "\e[32m\e[33m"
 }
 
-function c_black_white() {
-		echo -e "\e[0m\e[97m"
+c_black_white() {
+	echo -e "\e[0m\e[97m"
 }
 
-function c_green_white() {
-		echo -e "\e[42m\e[97m"
+c_green_white() {
+	echo -e "\e[42m\e[97m"
 }
 
-function c_default_green() {
-		echo -e "\e[32m"
+c_default_green() {
+	echo -e "\e[32m"
 }
 
-function c_black_blue() {
-		echo -e "\e[49m\e[34m"
+c_black_blue() {
+	echo -e "\e[49m\e[34m"
 }
 
-function c_default_darkgray() {
-		echo -e "\e[90m"
+c_default_darkgray() {
+	echo -e "\e[90m"
 }
 
-function c_reset() {
-		echo -e "\e[0m"
+c_reset() {
+	echo -e "\e[0m"
 }
 
-function PS1_DOCKER() {
-		echo -e "$(c_black_blue)$(parse_docker_username) $(c_reset)"
+PS1_DOCKER() {
+	echo -e "$(c_default_darkgray)$(parse_docker_username) $(c_reset)"
 }
 
-function PS1_KUBECTL() {
-		if hash kubectl 2>/dev/null; then
-				echo -e "$(c_red_white)$(get_current_kubectl_context)$(c_reset)"
-		fi
-}
-function PS1_GIT() {
-		echo -e "$(c_green_white)$(parse_git_branch)$(c_reset)"
+PS1_KUBECTL() {
+	if hash kubectl 2>/dev/null; then
+		echo -e "$(c_red_white)$(get_current_kubectl_context)$(c_reset)"
+	fi
 }
 
-function PS1_PATH() {
-		echo -e "\e[32m\e[33m$(pwd)"
+PS1_GIT() {
+	echo -e "$(c_green_white)$(parse_git_branch)$(c_reset)"
 }
 
-PS1='$(c_white_yellow)\w $(PS1_KUBECTL)$(PS1_GIT)$(PS1_DOCKER)$(c_reset) [$(c_default_darkgray)\u@$(c_default_green)\h]$(c_reset)\n$ '
+PS1_PATH() {
+	echo -e "\e[32m\e[33m$(pwd)"
+}
+
+PS1='$(c_default_darkgray)\h $(c_white_yellow)\w $(PS1_KUBECTL)$(PS1_GIT)$(PS1_DOCKER)$(c_reset)\n$ '
