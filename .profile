@@ -17,9 +17,9 @@ setxkbmap -option ctrl:nocaps
 
 # PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u\[\e[90m\]@\h \[\e[33m\]\w \[\e[32m\]\n\$ \[\e[0m\]'
 parse_git_branch() {
-	b=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+	local b=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
 	if [ "$b" != "" ]; then
-		echo [$b]
+		echo "[$b]"
 	else
 		echo $b
 	fi
@@ -27,7 +27,7 @@ parse_git_branch() {
 
 parse_docker_username() {
 	if hash docker 2>/dev/null && hash jq  2>/dev/null; then
-		d=$(cat ~/.docker/config.json  | jq .auths.\"https://index.docker.io/v1/\".auth -c -M -r | base64 -d | cut -d":" -f1)
+		local d=$(cat ~/.docker/config.json  | jq .auths.\"https://index.docker.io/v1/\".auth -c -M -r | base64 -d | cut -d":" -f1)
 		if [ "$d" != "" ]; then
 			echo "d/$d"
 		fi
