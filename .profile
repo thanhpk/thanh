@@ -3,8 +3,9 @@ source /etc/environment
 
 alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
 
-. .kubernetes
-. .gcp
+[[ -f ".kubernetes" ]] && . .kubernetes
+[[ -f ".gcp" ]] && . .gcp
+[[ -f ".auth" ]] && . .auth
 
 # set PATH so it includes user's private bin directories
 PATH="$HOME/workspace/bin:$HOME/.local/bin:$PATH"
