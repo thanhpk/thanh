@@ -12,6 +12,8 @@ PATH="$HOME/workspace/bin:$HOME/.local/bin:$PATH"
 export GOPATH=$HOME/workspace
 export CGO_ENABLED=0
 export VAULT_ADDR=https://vault.subiz.com/
+export GOCACHE=/tmp/go-cache/
+
 TERM=xterm-256color
 
 setxkbmap -option ctrl:nocaps
