@@ -7,10 +7,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-	 [default default default italic underline success warning error])
- '(ansi-color-names-vector
-	 ["#dddddd" "#222222" "#555555" "#000000" "#000000" "#222222" "#000000" "#000000"])
  '(blink-cursor-blinks 10000)
  '(blink-cursor-delay 0.1)
  '(blink-cursor-interval 0.1)
@@ -30,16 +26,6 @@
  '(fringe-mode 0 nil (fringe))
  '(global-linum-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
- '(highlight-tail-colors
-	 (quote
-		(("#3C3D37" . 0)
-		 ("#679A01" . 20)
-		 ("#4BBEAE" . 30)
-		 ("#1DB4D0" . 50)
-		 ("#9A8F21" . 60)
-		 ("#A75B00" . 70)
-		 ("#F309DF" . 85)
-		 ("#3C3D37" . 100))))
  '(ido-vertical-show-count t)
  '(indent-tabs-mode t)
  '(js-indent-level 2)
@@ -51,15 +37,13 @@
  '(message-default-charset (quote iso-8859-1))
  '(nginx-indent-level 2)
  '(nginx-indent-tabs-mode t)
- '(nrepl-message-colors
-	 (quote
-		("#032f62" "#6a737d" "#d73a49" "#6a737d" "#005cc5" "#6f42c1" "#d73a49" "#6a737d")))
  '(package-selected-packages
 	 (quote
-		(fish-mode hcl-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ color-theme-sanityinc-tomorrow java-imports java-snippets javadoc-lookup javap-mode yaml-mode persistent-scratch scratches dockerfile-mode python-docstring govet hydandata-light-theme material-theme delight dired-icon diminish gitignore-mode toml-mode json-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode highlight-tail mode-icons python-mode pyvenv auto-dim-other-buffers ob-go rainbow-delimiters jump-char avy cql-mode go-guru golint nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## ac-js2 list-packages-ext helm-projectile tide markdown-mode go-mode)))
+		(prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring govet dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go rainbow-delimiters jump-char avy cql-mode go-guru golint nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
+ '(prettier-js-command "prettier-eslint")
  '(projectile-global-mode t)
  '(py-indent-offset 2)
  '(py-indent-tabs-mode t)
@@ -80,26 +64,6 @@
  '(tool-bar-mode nil)
  '(typescript-indent-level 2)
  '(vc-annotate-background nil)
- '(vc-annotate-color-map
-	 (quote
-		((20 . "#F92672")
-		 (40 . "#CF4F1F")
-		 (60 . "#C26C0F")
-		 (80 . "#E6DB74")
-		 (100 . "#AB8C00")
-		 (120 . "#A18F00")
-		 (140 . "#989200")
-		 (160 . "#8E9500")
-		 (180 . "#A6E22E")
-		 (200 . "#729A1E")
-		 (220 . "#609C3C")
-		 (240 . "#4E9D5B")
-		 (260 . "#3C9F79")
-		 (280 . "#A1EFE4")
-		 (300 . "#299BA6")
-		 (320 . "#2896B5")
-		 (340 . "#2790C3")
-		 (360 . "#66D9EF"))))
  '(vc-annotate-very-old-color nil)
  '(window-divider-mode nil))
 
@@ -110,13 +74,7 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "#FFFFFF" :foreground "#333333" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 109 :width normal :foundry "APPL" :family "Monaco"))))
  '(dired-directory ((t (:inherit font-lock-function-name-face :foreground "blue"))))
- '(flycheck-error ((t (:underline (:color "red" :style wave)))))
- '(font-lock-comment-face ((t nil)))
- '(font-lock-constant-face ((t nil)))
- '(font-lock-function-name-face ((t nil)))
- '(font-lock-keyword-face ((t nil)))
- '(font-lock-string-face ((t nil)))
- '(font-lock-type-face ((t nil))))
+ '(flycheck-error ((t (:underline (:color "red" :style wave))))))
 
 (when (>= emacs-major-version 24)
   (require 'package)
@@ -156,22 +114,14 @@
 ;; display any item that contains the chars you typed
 (setq ido-enable-flex-matching t)
 
-;; (projectile-mode t)
-
 (defalias 'list-buffers 'ibuffer) ; make ibuffer default
-
-;; install js2-mode
-(add-to-list 'auto-mode-alist (cons (rx ".js" eos) 'js2-mode))
-(add-hook 'js2-mode-hook 'ac-js2-mode)
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
-(setq js2-strict-missing-semi-warning nil)
-(setq js2-missing-semi-one-line-override nil)
 
 (defun scroll-up-line-3 ()
   "Upcase the last letter of the word at point."
   (interactive)
   (scroll-up-line)
   (scroll-up-line)
+	(scroll-up-line)
 	(scroll-up-line))
 
 (defun scroll-down-line-3 ()
@@ -179,6 +129,7 @@
   (interactive)
   (scroll-down-line)
   (scroll-down-line)
+	(scroll-down-line)
 	(scroll-down-line))
 
 (defun move-to-next-line ()
@@ -204,25 +155,22 @@
 
 (put 'dired-find-alternate-file 'disabled nil)
 
-(add-hook 'dired-mode-hook
-					(lambda ()
-						(define-key dired-mode-map (kbd "^")
-							(lambda () (interactive) (find-alternate-file "..")))))
+(add-hook
+ 'dired-mode-hook
+ (lambda ()
+	 (define-key dired-mode-map (kbd "^")
+		 (lambda () (interactive) (find-alternate-file "..")))))
 
 ;; YML YAML mode
-(add-hook 'yaml-mode-hook
-					(lambda ()
-						(define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+(add-hook
+ 'yaml-mode-hook
+ (lambda ()
+	 (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
 (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
 
 (show-paren-mode 1)
 
-;; (windmove-default-keybindings 'meta)
-
-;;(global-set-key (kbd "DEL") 'backward-delete-char)
-
-(require 'json)
 (require 'flycheck)
 
 (put 'upcase-region 'disabled nil)
@@ -233,18 +181,17 @@
 ;;(require 'key-chord)
 ;;(setq key-chord-two-keys-delay 0.15)
 ;;(setq key-chord-one-key-delay 0.2)
-
-(defun switch-to-previous-buffer ()
-  "Switch to previously open buffer.Repeated invocations toggle between the two most recently open buffers."
-  (interactive)
-  (switch-to-buffer (other-buffer (current-buffer) 1)))
-
 ;;(key-chord-define-global "JJ" 'winner-undo)
 ;;(key-chord-define-global "SS" 'isearch-forward)
 ;;(key-chord-define-global "RR" 'query-replace)
 ;;(key-chord-define-global "OO" 'occur)
 ;;(key-chord-define-global "HH" 'linum-mode)
 ;;(key-chord-mode +1)
+
+(defun switch-to-previous-buffer ()
+  "Switch to previously open buffer.Repeated invocations toggle between the two most recently open buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
 
 (let ((map minibuffer-local-map))
   (define-key map [next]  'next-history-element)
@@ -270,7 +217,6 @@
 ;; (define-key isearch-mode-map (kbd "s-q") 'isearch-cancel)
 (global-set-key (kbd "M-a") 'avy-goto-word-1-above)
 (global-set-key (kbd "M-e") 'avy-goto-word-1-below)
-
 
 (defun xah-cut-line-or-region ()
   "Cut current line, or text selection.
@@ -385,7 +331,6 @@ Version 2017-07-08"
 (global-set-key (kbd "M-;") 'move-end-of-line)
 ;(global-set-key (kbd "s-m") 'move-beginning-of-line)
 
-
 (global-set-key (kbd "C-k") 'xah-cut-line-or-region)
 (global-set-key (kbd "C-o") 'ido-find-file)
 ;;(global-set-key (kbd "s-SPC") 'set-mark-command)
@@ -440,7 +385,6 @@ Version 2016-07-22"
         (end-of-line))
     (xah-select-current-line)))
 
-
 (defvar xah-brackets nil "string of left/right brackets pairs.")
 (setq xah-brackets "()[]{}<>（）［］｛｝⦅⦆〚〛⦃⦄“”‘’‹›«»「」〈〉《》【】〔〕⦗⦘『』〖〗〘〙｢｣⟦⟧⟨⟩⟪⟫⟮⟯⟬⟭⌈⌉⌊⌋⦇⦈⦉⦊❛❜❝❞❨❩❪❫❴❵❬❭❮❯❰❱❲❳〈〉⦑⦒⧼⧽﹙﹚﹛﹜﹝﹞⁽⁾₍₎⦋⦌⦍⦎⦏⦐⁅⁆⸢⸣⸤⸥⟅⟆⦓⦔⦕⦖⸦⸧⸨⸩｟｠⧘⧙⧚⧛⸜⸝⸌⸍⸂⸃⸄⸅⸉⸊᚛᚜༺༻༼༽⏜⏝⎴⎵⏞⏟⏠⏡﹁﹂﹃﹄︹︺︻︼︗︘︿﹀︽︾﹇﹈︷︸")
 
@@ -489,22 +433,10 @@ Version 2016-11-22"
 (defun tmtxt/make-minibuffer-text-bigger ()
   "Make minibuffer text bigger"
   (set (make-local-variable 'face-remapping-alist)
-       '((default :height 1.3)))
+       '((default :height 1.5)))
   (setq line-spacing 0.2))
 (add-hook 'minibuffer-setup-hook 'tmtxt/make-minibuffer-text-bigger)
 
-(require 'delight)
-(delight '((abbrev-mode " Abv" abbrev)
-           (smart-tab-mode " \\t" smart-tab)
-           (eldoc-mode nil "eldoc")
-           (rainbow-mode)
-           (overwrite-mode " Ov" t)
-				 	;(go-mode "G" :major)
-				  	(projectile-mode "❡" projectile)
-				  	(flycheck-mode  "🐛"  flycheck)
-           (emacs-lisp-mode "Elisp" :major)))
-
-;;; ᚻ ᛜ ᛃ
 ;;(global-set-key (kbd "C-p") 'helm-projectile)
 (global-set-key (kbd "M-f") 'dired-jump)
 (global-set-key (kbd "C-b") 'ido-kill-buffer)
@@ -518,8 +450,6 @@ Version 2016-11-22"
 
 ;; (global-set-key (kbd "M-U") 'other-frame)
 
-;;(global-DieIf-key  (kbd "C-n") 'goto-line)
-;;(global-set-key (kbd "M-p") 'goto-line)
 ;;(global-set-key (kbd "C-f") nil)
 ;;(global-set-key (kdb "C-i")
 ;;; .emacs ends here
