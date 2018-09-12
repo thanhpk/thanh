@@ -29,11 +29,16 @@ parse_git_branch() {
 }
 
 parse_docker_username() {
-	if hash docker 2>/dev/null && hash jq  2>/dev/null; then
-		local d=$(cat ~/.docker/config.json  | jq .auths.\"https://index.docker.io/v1/\".auth -c -M -r | base64 -d | cut -d":" -f1)
-		if [ "$d" != "" ]; then
-			echo "d/$d"
-		fi
+	if !(hash docker) 2>/dev/null && hash jq  2>/dev/null; then
+		return
+	fi
+	local d=$(cat ~/.docker/config.json  | jq .auths.\"https://index.docker.io/v1/\".auth -c -M -r | base64 -d | cut -d":" -f1)
+	if [ "$d" == "trancong" ]; then
+		echo "d/c"
+	elif ["$d" == "thanhpk" ]; then
+		echo "d/t"
+	elif [ "$d" != "" ]; then
+		echo "d/$d"
 	fi
 }
 
