@@ -92,4 +92,4 @@ PS1_PATH() {
 	echo -e "\e[32m\e[33m$(pwd)"
 }
 
-PS1='$(c_default_darkgray)\h $(c_white_yellow)\w $(PS1_KUBECTL)$(PS1_GIT)$(PS1_DOCKER)$(c_reset)\n$ '
+PS1='$(c_default_darkgray)\h $(c_white_yellow)\w $(PS1_KUBECTL)$(PS1_GIT)$(c_reset)\n$ '
