@@ -3,7 +3,7 @@ source /etc/environment
 
 alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
 alias ls='ls --color'
-alias grep='ls --color'
+alias grep='grep --color'
 
 [[ -f ".kubernetes" ]] && . .kubernetes
 [[ -f ".gcp" ]] && . .gcp
