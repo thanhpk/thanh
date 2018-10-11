@@ -94,4 +94,9 @@ PS1_PATH() {
 	echo -e "\e[32m\e[33m$(pwd)"
 }
 
-PS1='$(c_default_darkgray)\h $(c_white_yellow)\w $(PS1_KUBECTL)$(PS1_GIT)$(c_reset)\n$ '
+PS1_BEEP() {
+  #nohup sleep 1 &>/dev/null &
+	nohup play -q -n synth 0.05 sin 300 &>/dev/null &
+}
+
+PS1='$(c_default_darkgray)\h $(c_white_yellow)\w $(PS1_KUBECTL)$(PS1_GIT)$(c_reset)\n$ $(PS1_BEEP)'
