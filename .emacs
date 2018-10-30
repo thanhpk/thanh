@@ -350,7 +350,6 @@ Version 2017-07-08"
 (define-key key-translation-map "\M-l" (kbd "<right>"))
 
 (define-key isearch-mode-map (kbd "M-s") 'isearch-repeat-forward)
-(define-key isearch-mode-map (kbd "<escape> l") 'linum-mode)
 (define-key isearch-mode-map (kbd "M-r") 'isearch-repeat-backward)
 ;;(define-key isearch-mode-map (kbd "s-q") 'isearch-cancel)
 (global-set-key (kbd "M-a") 'avy-goto-word-1-above)
@@ -358,7 +357,6 @@ Version 2017-07-08"
 (global-set-key (kbd "M-v") 'switch-to-previous-buffer)
 
 (global-set-key (kbd "M-q") 'backward-kill-word)
-(global-set-key (kbd "C-b") nil)
 (global-set-key (kbd "C-a") nil)
 (global-set-key (kbd "C-w") nil)
 ;;(global-set-key (kbd "C-e") nil)
@@ -441,7 +439,6 @@ Version 2016-11-22"
 (global-set-key (kbd "M-f") 'dired-jump)
 (global-set-key (kbd "C-b") 'ido-kill-buffer)
 (global-set-key (kbd "C-a") 'save-buffer)
-(global-set-key (kbd "C-l") 'goto-line)
 (global-set-key (kbd "C-d") nil)
 (global-set-key (kbd "M-0") 'back-to-identation)
 (global-set-key (kbd "M-g t") 'other-window)
