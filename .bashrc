@@ -118,6 +118,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
-. .profile
-
-complete -C /usr/local/bin/vault vault
+. $HOME/.profile

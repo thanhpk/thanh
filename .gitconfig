@@ -4,24 +4,6 @@
 [core]
 	editor = vim
 
-#[url "ssh://git@origin.cf:10022/"]
-#  insteadOf = https://bitbucket.org/
-
-#[url "http://origin.dev:10292/"]
-#  insteadOf = http://origin.cf/
-
-#[url "http://github.dev:10292/"]
-#  insteadOf = https://github.com/
-
-#[url "http://github.dev:10292/"]
-#  insteadOf = http://github.com/
-
-#[url "http://github.dev:10292/"]
-#  insteadOf = git://github.com/
-
-#[url "http://github.dev:10292/"]
-#  insteadOf = git@github.com:
-
 [alias]
 lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(magenta)%h%C(reset)%C(bold yellow)%d%C(reset) %C(green)%s%C(reset) %C(dim white)<%an>%C(reset) %C(dim white)%ar%C(reset)' --all
 lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all

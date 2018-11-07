@@ -1,13 +1,13 @@
-# . .alias
+# . $HOME/.alias
 source /etc/environment
 
 alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
 alias ls='ls --color'
 alias grep='grep --color'
 
-[[ -f ".kubernetes" ]] && . .kubernetes
-[[ -f ".gcp" ]] && . .gcp
-[[ -f ".auth" ]] && . .auth
+[[ -f "$HOME/.kubernetes" ]] && . ~/.kubernetes
+[[ -f "$HOME/.gcp" ]] && . ~/.gcp
+[[ -f "$HOME/.auth" ]] && . ~/.auth
 
 # set PATH so it includes user's private bin directories
 PATH="$HOME/workspace/bin:$HOME/.local/bin:$PATH"
