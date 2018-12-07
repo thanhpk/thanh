@@ -72,17 +72,27 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#FFFFFF" :foreground "#333333" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 109 :width normal :foundry "APPL" :family "Monaco"))))
+ '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 117 :width normal :foundry "UKWN" :family "Latin Modern Mono Light"))))
  '(dired-directory ((t (:inherit font-lock-function-name-face :foreground "blue"))))
- '(flycheck-error ((t (:underline (:color "red" :style wave))))))
+ '(flycheck-error ((t (:underline (:color "red" :style wave)))))
+ '(font-lock-builtin-face ((t (:foreground "#444444"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#006600"))))
+ '(font-lock-comment-face ((t (:foreground "#007700" :slant normal))))
+ '(font-lock-constant-face ((t (:foreground "#000000"))))
+ '(font-lock-function-name-face ((t (:foreground "blue1" :weight bold))))
+ '(font-lock-keyword-face ((t (:foreground "black" :weight bold))))
+ '(font-lock-string-face ((t (:foreground "dark red"))))
+ '(font-lock-type-face ((t (:foreground "#000000" :weight bold))))
+ '(font-lock-variable-name-face ((t (:foreground "#BA36A5" :weight bold)))))
 
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (add-to-list
-   'package-archives
-   '("melpa" . "http://melpa.org/packages/")
-   t)
-  (package-initialize))
+(require 'package)
+
+(add-to-list
+ 'package-archives
+ '("melpa" . "http://melpa.org/packages/")
+ t)
+
+(package-initialize)
 
 ;; (add-to-list 'load-path "~/elisp")
 
@@ -274,7 +284,6 @@ Version 2017-07-08"
             (forward-char)
             (message "line copied")))))))
 
-
 (defun copy-line (arg)
 	"Copy lines (as many as prefix argument) in the kill ring.
       Ease of use features:
@@ -355,12 +364,7 @@ Version 2017-07-08"
 (global-set-key (kbd "M-a") 'avy-goto-word-1-above)
 (global-set-key (kbd "M-e") 'avy-goto-word-1-below)
 (global-set-key (kbd "M-v") 'switch-to-previous-buffer)
-
 (global-set-key (kbd "M-q") 'backward-kill-word)
-(global-set-key (kbd "C-a") nil)
-(global-set-key (kbd "C-w") nil)
-;;(global-set-key (kbd "C-e") nil)
-;; (global-set-key (kbd "C-SPC") 'set-mark-command)
 
 ;;(electric-pair-mode 1)
 
@@ -383,7 +387,7 @@ Version 2016-07-22"
         (end-of-line))
     (xah-select-current-line)))
 
-(defvar xah-brackets nil "string of left/right brackets pairs.")
+(defvar xah-brackets nil "String of left/right brackets pairs.")
 (setq xah-brackets "()[]{}<>（）［］｛｝⦅⦆〚〛⦃⦄“”‘’‹›«»「」〈〉《》【】〔〕⦗⦘『』〖〗〘〙｢｣⟦⟧⟨⟩⟪⟫⟮⟯⟬⟭⌈⌉⌊⌋⦇⦈⦉⦊❛❜❝❞❨❩❪❫❴❵❬❭❮❯❰❱❲❳〈〉⦑⦒⧼⧽﹙﹚﹛﹜﹝﹞⁽⁾₍₎⦋⦌⦍⦎⦏⦐⁅⁆⸢⸣⸤⸥⟅⟆⦓⦔⦕⦖⸦⸧⸨⸩｟｠⧘⧙⧚⧛⸜⸝⸌⸍⸂⸃⸄⸅⸉⸊᚛᚜༺༻༼༽⏜⏝⎴⎵⏞⏟⏠⏡﹁﹂﹃﹄︹︺︻︼︗︘︿﹀︽︾﹇﹈︷︸")
 
 (defvar xah-left-brackets '("(" "{" "[" "<" "〔" "【" "〖" "〈" "《" "「" "『" "“" "‘" "‹" "«" )
@@ -398,7 +402,7 @@ Version 2016-07-22"
   (setq xah-left-brackets (reverse xah-left-brackets)))
 
 (defvar xah-right-brackets '(")" "]" "}" ">" "〕" "】" "〗" "〉" "》" "」" "』" "”" "’" "›" "»")
-  "list of right bracket chars.")
+  "List of right bracket chars.")
 (progn
   (setq xah-right-brackets '())
   (dotimes ($x (- (length xah-brackets) 1))
@@ -429,7 +433,7 @@ Version 2016-11-22"
 
 ;;; bigger minibuffer text
 (defun tmtxt/make-minibuffer-text-bigger ()
-  "Make minibuffer text bigger"
+  "Make minibuffer text bigger."
   (set (make-local-variable 'face-remapping-alist)
        '((default :height 1.5)))
   (setq line-spacing 0.2))
@@ -439,7 +443,6 @@ Version 2016-11-22"
 (global-set-key (kbd "M-f") 'dired-jump)
 (global-set-key (kbd "C-b") 'ido-kill-buffer)
 (global-set-key (kbd "C-a") 'save-buffer)
-(global-set-key (kbd "C-d") nil)
 (global-set-key (kbd "M-0") 'back-to-identation)
 (global-set-key (kbd "M-g t") 'other-window)
 (global-set-key (kbd "M-:") 'goto-line)
