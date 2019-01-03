@@ -39,7 +39,7 @@
  '(nginx-indent-tabs-mode t)
  '(package-selected-packages
 	 (quote
-		(prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring govet dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go rainbow-delimiters jump-char avy cql-mode go-guru golint nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
+		(protobuf-mode prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring govet dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go rainbow-delimiters jump-char avy cql-mode go-guru golint nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -72,18 +72,19 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight bold :height 117 :width normal :foundry "UKWN" :family "Latin Modern Mono Light"))))
+ '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 102 :width normal :foundry "MS  " :family "Consolas"))))
  '(dired-directory ((t (:inherit font-lock-function-name-face :foreground "blue"))))
  '(flycheck-error ((t (:underline (:color "red" :style wave)))))
  '(font-lock-builtin-face ((t (:foreground "#444444"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "#006600"))))
  '(font-lock-comment-face ((t (:foreground "#007700" :slant normal))))
  '(font-lock-constant-face ((t (:foreground "#000000"))))
- '(font-lock-function-name-face ((t (:foreground "blue1" :weight bold))))
- '(font-lock-keyword-face ((t (:foreground "black" :weight bold))))
+ '(font-lock-function-name-face ((t (:foreground "blue1"))))
+ '(font-lock-keyword-face ((t (:foreground "black"))))
  '(font-lock-string-face ((t (:foreground "dark red"))))
- '(font-lock-type-face ((t (:foreground "#000000" :weight bold))))
- '(font-lock-variable-name-face ((t (:foreground "#BA36A5" :weight bold)))))
+ '(font-lock-type-face ((t (:foreground "#000000"))))
+ '(font-lock-variable-name-face ((t (:foreground "#BA36A5"))))
+ '(ido-vertical-first-match-face ((t (:inherit ido-first-match)))))
 
 (require 'package)
 
@@ -127,18 +128,18 @@
 (defalias 'list-buffers 'ibuffer) ; make ibuffer default
 
 (defun scroll-up-line-3 ()
-  "Upcase the last letter of the word at point."
-  (interactive)
-  (scroll-up-line)
-  (scroll-up-line)
+	"Upcase the last letter of the word at point."
+	(interactive)
+	(scroll-up-line)
+	(scroll-up-line)
 	(scroll-up-line)
 	(scroll-up-line))
 
 (defun scroll-down-line-3 ()
-  "Upcase the last letter of the word at point."
-  (interactive)
-  (scroll-down-line)
-  (scroll-down-line)
+	"Upcase the last letter of the word at point."
+	(interactive)
+	(scroll-down-line)
+	(scroll-down-line)
 	(scroll-down-line)
 	(scroll-down-line))
 
@@ -199,28 +200,28 @@
 ;;(key-chord-mode +1)
 
 (defun switch-to-previous-buffer ()
-  "Switch to previously open buffer.Repeated invocations toggle between the two most recently open buffers."
-  (interactive)
-  (switch-to-buffer (other-buffer (current-buffer) 1)))
+	"Switch to previously open buffer.Repeated invocations toggle between the two most recently open buffers."
+	(interactive)
+	(switch-to-buffer (other-buffer (current-buffer) 1)))
 
 (let ((map minibuffer-local-map))
-  (define-key map [next]  'next-history-element)
-  (define-key map [down]  'next-history-element)
-  (define-key map [XF86Forward] 'next-history-element)
-  (define-key map [prior] 'previous-history-element)
-  (define-key map [up]    'previous-history-element)
-  (define-key map [XF86Back] 'previous-history-element)
-  ;; Override the global binding (which calls indent-relative via
-  ;; indent-for-tab-command).  The alignment that indent-relative tries to
-  ;; do doesn't make much sense here since the prompt messes it up.
-  (define-key map "\t"    'self-insert-command)
-  (define-key map [C-tab] 'file-cache-minibuffer-complete)
-	(define-key map "\M-s" 'isearch-repeat-forward)
+	(define-key map [next]        'next-history-element)
+	(define-key map [down]        'next-history-element)
+	(define-key map [XF86Forward] 'next-history-element)
+	(define-key map [prior]       'previous-history-element)
+	(define-key map [up]          'previous-history-element)
+	(define-key map [XF86Back]    'previous-history-element)
+	;; Override the global binding (which calls indent-relative via
+	;; indent-for-tab-command).  The alignment that indent-relative tries to
+	;; do doesn't make much sense here since the prompt messes it up.
+	(define-key map "\t"          'self-insert-command)
+	(define-key map [C-tab]       'file-cache-minibuffer-complete)
+	(define-key map "\M-s"        'isearch-repeat-forward)
 	;;	(define-key map "\M-s" 'abort-recursive-edit)
 	;;		(define-key map "\M-q" 'abort-recursive-edit))
 	)
 
-;;(define-key key-translation-map "\s-q" (kbd "\C-g"))
+;; (define-key key-translation-map "\s-q" (kbd "\C-g"))
 ;; (define-key key-translation-map "\M-," (kbd "<RET>"))
 (define-key isearch-mode-map (kbd "M-s") 'isearch-repeat-forward)
 (define-key isearch-mode-map (kbd "M-r") 'isearch-repeat-backward)
@@ -229,68 +230,68 @@
 (global-set-key (kbd "M-e") 'avy-goto-word-1-below)
 
 (defun xah-cut-line-or-region ()
-  "Cut current line, or text selection.
+	"Cut current line, or text selection.
 When `universal-argument' is called first, cut whole buffer (respects `narrow-to-region').
 
 URL `http://ergoemacs.org/emacs/emacs_copy_cut_current_line.html'
 Version 2015-06-10"
-  (interactive)
-  (if current-prefix-arg
-      (progn ; not using kill-region because we don't want to include previous kill
-        (kill-new (buffer-string))
-        (delete-region (point-min) (point-max)))
-    (progn (if (use-region-p)
-               (kill-region (region-beginning) (region-end) t)
-             (kill-region (line-beginning-position) (line-beginning-position 2))))))
+	(interactive)
+	(if current-prefix-arg
+			(progn ; not using kill-region because we don't want to include previous kill
+				(kill-new (buffer-string))
+				(delete-region (point-min) (point-max)))
+		(progn (if (use-region-p)
+							 (kill-region (region-beginning) (region-end) t)
+						 (kill-region (line-beginning-position) (line-beginning-position 2))))))
 
 (defun xah-copy-line-or-region ()
-  "Copy current line, or text selection.
+	"Copy current line, or text selection.
 When called repeatedly, append copy subsequent lines.
 When `universal-argument' is called first, copy whole buffer (respects `narrow-to-region').
 
 URL `http://ergoemacs.org/emacs/emacs_copy_cut_current_line.html'
 Version 2017-07-08"
-  (interactive)
-  (if current-prefix-arg
-      (progn
-        (kill-ring-save (point-min) (point-max))
-        (message "All visible buffer text copied"))
-    (if (use-region-p)
-        (progn
-          (kill-ring-save (region-beginning) (region-end))
-          (message "Active region copied"))
-      (if (eq last-command this-command)
-          (if (eobp)
-              (progn (message "empty line at end of buffer." ))
-            (progn
-              (kill-append "\n" nil)
-              (kill-append
-               (buffer-substring-no-properties (line-beginning-position) (line-end-position))
-               nil)
-              (message "Line copy appended")
-              (progn
-                (end-of-line)
-                (forward-char))))
-        (if (eobp)
-            (if (eq (char-before) 10 )
-                (progn (message "empty line at end of buffer." ))
-              (progn
-                (kill-ring-save (line-beginning-position) (line-end-position))
-                (end-of-line)
-                (message "line copied")))
-          (progn
-            (kill-ring-save (line-beginning-position) (line-end-position))
-            (end-of-line)
-            (forward-char)
-            (message "line copied")))))))
+	(interactive)
+	(if current-prefix-arg
+			(progn
+				(kill-ring-save (point-min) (point-max))
+				(message "All visible buffer text copied"))
+		(if (use-region-p)
+				(progn
+					(kill-ring-save (region-beginning) (region-end))
+					(message "Active region copied"))
+			(if (eq last-command this-command)
+					(if (eobp)
+							(progn (message "empty line at end of buffer." ))
+						(progn
+							(kill-append "\n" nil)
+							(kill-append
+							 (buffer-substring-no-properties (line-beginning-position) (line-end-position))
+							 nil)
+							(message "Line copy appended")
+							(progn
+								(end-of-line)
+								(forward-char))))
+				(if (eobp)
+						(if (eq (char-before) 10 )
+								(progn (message "empty line at end of buffer." ))
+							(progn
+								(kill-ring-save (line-beginning-position) (line-end-position))
+								(end-of-line)
+								(message "line copied")))
+					(progn
+						(kill-ring-save (line-beginning-position) (line-end-position))
+						(end-of-line)
+						(forward-char)
+						(message "line copied")))))))
 
 (defun copy-line (arg)
 	"Copy lines (as many as prefix argument) in the kill ring.
-      Ease of use features:
-      - Move to start of next line.
-      - Appends the copy on sequential calls.
-      - Use newline as last char even on the last line of the buffer.
-      - If region is active, copy its lines."
+			Ease of use features:
+			- Move to start of next line.
+			- Appends the copy on sequential calls.
+			- Use newline as last char even on the last line of the buffer.
+			- If region is active, copy its lines."
 	(interactive "p")
 	(let ((beg (line-beginning-position))
 				(end (line-end-position arg)))
@@ -317,13 +318,14 @@ Version 2017-07-08"
 (global-set-key (kbd "M-o m") 'rectangle-mark-mode)
 (global-set-key (kbd "M-o f") 'dired-jump)
 (global-set-key (kbd "M-o j") 'godef-jump-other-window)
+(global-set-key (kbd "M-o c") 'delete-window)
 
 (global-set-key (kbd "M-J") 'scroll-up-line-3)
 (global-set-key (kbd "M-K") 'scroll-down-line-3)
 (global-set-key (kbd "M-H") 'backward-word)
 (global-set-key (kbd "M-L") 'forward-word)
 
-;;  (global-set-key (kbd "M-,") 'newline)
+;; (global-set-key (kbd "M-,") 'newline)
 ;; (global-set-key (kbd "M-S-h") 'windmove-left)
 ;; (global-set-key (kbd "M-S-l") 'windmove-right)
 ;; (global-set-key (kbd "M-S-k") 'windmove-up)
@@ -333,9 +335,6 @@ Version 2017-07-08"
 
 (global-set-key (kbd "M-p") 'switch-to-buffer)
 (global-set-key (kbd "M-P") 'switch-to-buffer-other-window)
-;;(global-set-key (kbd "C-;") 'switch-to-buffer)
-(global-set-key (kbd "M-r") 'isearch-backward)
-(global-set-key (kbd "M-s") 'isearch-forward)
 
 (global-set-key (kbd "M-;") 'move-end-of-line)
 ;(global-set-key (kbd "s-m") 'move-beginning-of-line)
@@ -358,85 +357,81 @@ Version 2017-07-08"
 (define-key key-translation-map "\M-h" (kbd "<left>"))
 (define-key key-translation-map "\M-l" (kbd "<right>"))
 
-(define-key isearch-mode-map (kbd "M-s") 'isearch-repeat-forward)
-(define-key isearch-mode-map (kbd "M-r") 'isearch-repeat-backward)
 ;;(define-key isearch-mode-map (kbd "s-q") 'isearch-cancel)
 (global-set-key (kbd "M-a") 'avy-goto-word-1-above)
 (global-set-key (kbd "M-e") 'avy-goto-word-1-below)
 (global-set-key (kbd "M-v") 'switch-to-previous-buffer)
 (global-set-key (kbd "M-q") 'backward-kill-word)
 
-;;(electric-pair-mode 1)
-
 (defun xah-select-current-line ()
-  "Select current line.
+	"Select current line.
 URL `http://ergoemacs.org/emacs/modernization_mark-word.html'
 Version 2016-07-22"
-  (interactive)
-  (end-of-line)
-  (set-mark (line-beginning-position)))
+	(interactive)
+	(end-of-line)
+	(set-mark (line-beginning-position)))
 
 (defun xah-select-line ()
-  "Select current line. If region is active, extend selection downward by line.
+	"Select current line. If region is active, extend selection downward by line.
 URL `http://ergoemacs.org/emacs/modernization_mark-word.html'
 Version 2016-07-22"
-  (interactive)
-  (if (region-active-p)
-      (progn
-        (forward-line 1)
-        (end-of-line))
-    (xah-select-current-line)))
+	(interactive)
+	(if (region-active-p)
+			(progn
+				(forward-line 1)
+				(end-of-line))
+		(xah-select-current-line)))
 
 (defvar xah-brackets nil "String of left/right brackets pairs.")
-(setq xah-brackets "()[]{}<>（）［］｛｝⦅⦆〚〛⦃⦄“”‘’‹›«»「」〈〉《》【】〔〕⦗⦘『』〖〗〘〙｢｣⟦⟧⟨⟩⟪⟫⟮⟯⟬⟭⌈⌉⌊⌋⦇⦈⦉⦊❛❜❝❞❨❩❪❫❴❵❬❭❮❯❰❱❲❳〈〉⦑⦒⧼⧽﹙﹚﹛﹜﹝﹞⁽⁾₍₎⦋⦌⦍⦎⦏⦐⁅⁆⸢⸣⸤⸥⟅⟆⦓⦔⦕⦖⸦⸧⸨⸩｟｠⧘⧙⧚⧛⸜⸝⸌⸍⸂⸃⸄⸅⸉⸊᚛᚜༺༻༼༽⏜⏝⎴⎵⏞⏟⏠⏡﹁﹂﹃﹄︹︺︻︼︗︘︿﹀︽︾﹇﹈︷︸")
-
-(defvar xah-left-brackets '("(" "{" "[" "<" "〔" "【" "〖" "〈" "《" "「" "『" "“" "‘" "‹" "«" )
-  "List of left bracket chars.")
+(setq xah-brackets "()[]{}<>“”‘’''``")
+`
+(defvar xah-left-brackets '("(" "{" "[" "<" "“" "‘" )
+	"List of left bracket chars.")
 (progn
 ;; make xah-left-brackets based on xah-brackets
-  (setq xah-left-brackets '())
-  (dotimes ($x (- (length xah-brackets) 1))
-    (when (= (% $x 2) 0)
-      (push (char-to-string (elt xah-brackets $x))
-            xah-left-brackets)))
-  (setq xah-left-brackets (reverse xah-left-brackets)))
+	(setq xah-left-brackets '())
+	(dotimes ($x (- (length xah-brackets) 1))
+		(when (= (% $x 2) 0)
+			(push (char-to-string (elt xah-brackets $x))
+						xah-left-brackets)))
+	(setq xah-left-brackets (reverse xah-left-brackets)))
 
-(defvar xah-right-brackets '(")" "]" "}" ">" "〕" "】" "〗" "〉" "》" "」" "』" "”" "’" "›" "»")
-  "List of right bracket chars.")
+(defvar xah-right-brackets '(")" "]" "}" ">" "”" "’")
+	"List of right bracket chars.")
 (progn
-  (setq xah-right-brackets '())
-  (dotimes ($x (- (length xah-brackets) 1))
-    (when (= (% $x 2) 1)
-      (push (char-to-string (elt xah-brackets $x))
-            xah-right-brackets)))
-  (setq xah-right-brackets (reverse xah-right-brackets)))
+	(setq xah-right-brackets '())
+	(dotimes ($x (- (length xah-brackets) 1))
+		(when (= (% $x 2) 1)
+			(push (char-to-string (elt xah-brackets $x))
+						xah-right-brackets)))
+	(setq xah-right-brackets (reverse xah-right-brackets)))
 
 (defun xah-goto-matching-bracket ()
-  "Move cursor to the matching bracket.
+	"Move cursor to the matching bracket.
 If cursor is not on a bracket, call `backward-up-list'.
 The list of brackets to jump to is defined by `xah-left-brackets' and `xah-right-brackets'.
 URL `http://ergoemacs.org/emacs/emacs_navigating_keys_for_brackets.html'
 Version 2016-11-22"
-  (interactive)
-  (if (nth 3 (syntax-ppss))
-      (backward-up-list 1 'ESCAPE-STRINGS 'NO-SYNTAX-CROSSING)
-    (cond
-     ((eq (char-after) ?\") (forward-sexp))
-     ((eq (char-before) ?\") (backward-sexp ))
-     ((looking-at (regexp-opt xah-left-brackets))
-      (forward-sexp))
-     ((looking-back (regexp-opt xah-right-brackets) (max (- (point) 1) 1))
-      (backward-sexp))
-     (t (backward-up-list 1 'ESCAPE-STRINGS 'NO-SYNTAX-CROSSING)))))
+	(interactive)
+	(if (nth 3 (syntax-ppss))
+			(backward-up-list 1 'ESCAPE-STRINGS 'NO-SYNTAX-CROSSING)
+		(cond
+		 ((eq (char-after) ?\") (forward-sexp))
+		 ((eq (char-before) ?\") (backward-sexp ))
+		 ((looking-at (regexp-opt xah-left-brackets))
+			(forward-sexp))
+		 ((looking-back (regexp-opt xah-right-brackets) (max (- (point) 1) 1))
+			(backward-sexp))
+		 (t (backward-up-list 1 'ESCAPE-STRINGS 'NO-SYNTAX-CROSSING)))))
 
 (global-set-key (kbd "M-n") 'xah-goto-matching-bracket)
 
 ;;; bigger minibuffer text
 (defun tmtxt/make-minibuffer-text-bigger ()
-  "Make minibuffer text bigger."
-  (set (make-local-variable 'face-remapping-alist)
-       '((default :height 1.5)))
-  (setq line-spacing 0.2))
+	"Make minibuffer text bigger."
+	(set (make-local-variable 'face-remapping-alist)
+			 '((default :height 1.75)))
+	(setq line-spacing 0.2))
 (add-hook 'minibuffer-setup-hook 'tmtxt/make-minibuffer-text-bigger)
 
 ;;(global-set-key (kbd "C-p") 'helm-projectile)
@@ -447,7 +442,8 @@ Version 2016-11-22"
 (global-set-key (kbd "M-g t") 'other-window)
 (global-set-key (kbd "M-:") 'goto-line)
 (global-set-key (kbd "C-p") 'pop-to-mark-command)
-
+(global-set-key (kbd "M-.") 'dabbrev-expand)
+(global-set-key (kbd "C-.") 'undo)
 ;; (global-set-key (kbd "M-U") 'other-frame)
 
 ;;(global-set-key (kbd "C-f") nil)
