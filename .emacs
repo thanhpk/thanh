@@ -6,7 +6,7 @@
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+ ;; If there is more than one, they won't work right. 
  '(blink-cursor-blinks 10000)
  '(blink-cursor-delay 0.1)
  '(blink-cursor-interval 0.1)
@@ -14,7 +14,10 @@
  '(c-basic-offset 2)
  '(column-number-mode t)
  '(compilation-message-face (quote default))
- '(custom-enabled-themes (quote (leuven)))
+ '(custom-enabled-themes nil)
+ '(custom-safe-themes
+	 (quote
+		("e2fd81495089dc09d14a88f29dfdff7645f213e2c03650ac2dd275de52a513de" "2a9039b093df61e4517302f40ebaf2d3e95215cb2f9684c8c1a446659ee226b9" "a622aaf6377fe1cd14e4298497b7b2cae2efc9e0ce362dade3a58c16c89e089c" "3da031b25828b115c6b50bb92a117f5c0bbd3d9d0e9ba5af3cd2cb9db80db1c2" "7f89ec3c988c398b88f7304a75ed225eaac64efa8df3638c815acc563dfd3b55" "2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" default)))
  '(fci-rule-color "#efefef")
  '(fill-nobreak-invisible nil)
  '(fish-indent-offset 2)
@@ -39,7 +42,7 @@
  '(nginx-indent-tabs-mode t)
  '(package-selected-packages
 	 (quote
-		(protobuf-mode prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring govet dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go rainbow-delimiters jump-char avy cql-mode go-guru golint nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
+		(atom-dark-theme gruvbox-theme protobuf-mode prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring govet dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go rainbow-delimiters jump-char avy cql-mode go-guru golint nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -66,25 +69,6 @@
  '(vc-annotate-background nil)
  '(vc-annotate-very-old-color nil)
  '(window-divider-mode nil))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 102 :width normal :foundry "MS  " :family "Consolas"))))
- '(dired-directory ((t (:inherit font-lock-function-name-face :foreground "blue"))))
- '(flycheck-error ((t (:underline (:color "red" :style wave)))))
- '(font-lock-builtin-face ((t (:foreground "#444444"))))
- '(font-lock-comment-delimiter-face ((t (:foreground "#006600"))))
- '(font-lock-comment-face ((t (:foreground "#007700" :slant normal))))
- '(font-lock-constant-face ((t (:foreground "#000000"))))
- '(font-lock-function-name-face ((t (:foreground "blue1"))))
- '(font-lock-keyword-face ((t (:foreground "black"))))
- '(font-lock-string-face ((t (:foreground "dark red"))))
- '(font-lock-type-face ((t (:foreground "#000000"))))
- '(font-lock-variable-name-face ((t (:foreground "#BA36A5"))))
- '(ido-vertical-first-match-face ((t (:inherit ido-first-match)))))
 
 (require 'package)
 
@@ -445,7 +429,11 @@ Version 2016-11-22"
 (global-set-key (kbd "M-.") 'dabbrev-expand)
 (global-set-key (kbd "C-.") 'undo)
 ;; (global-set-key (kbd "M-U") 'other-frame)
-
-;;(global-set-key (kbd "C-f") nil)
-;;(global-set-key (kdb "C-i")
-;;; .emacs ends here
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "Monaco"))))
+ '(flycheck-error ((t (:background "#ffdddd" :underline (:color "Red1" :style wave)))))
+ '(font-lock-comment-face ((t (:foreground "magenta")))))
