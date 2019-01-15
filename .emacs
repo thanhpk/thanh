@@ -6,7 +6,9 @@
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right. 
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+	 ["#ebdbb2" "#cc241d" "#98971a" "#d79921" "#458588" "#b16286" "#689d6a" "#3c3836"])
  '(blink-cursor-blinks 10000)
  '(blink-cursor-delay 0.1)
  '(blink-cursor-interval 0.1)
@@ -14,10 +16,10 @@
  '(c-basic-offset 2)
  '(column-number-mode t)
  '(compilation-message-face (quote default))
- '(custom-enabled-themes nil)
+ '(custom-enabled-themes (quote (gruvbox-dark-hard)))
  '(custom-safe-themes
 	 (quote
-		("e2fd81495089dc09d14a88f29dfdff7645f213e2c03650ac2dd275de52a513de" "2a9039b093df61e4517302f40ebaf2d3e95215cb2f9684c8c1a446659ee226b9" "a622aaf6377fe1cd14e4298497b7b2cae2efc9e0ce362dade3a58c16c89e089c" "3da031b25828b115c6b50bb92a117f5c0bbd3d9d0e9ba5af3cd2cb9db80db1c2" "7f89ec3c988c398b88f7304a75ed225eaac64efa8df3638c815acc563dfd3b55" "2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" default)))
+		("595617a3c537447aa7e76ce05c8d43146a995296ea083211225e7efc069c598f" "fd3c7bd752f48dcb7efa5f852ef858c425b1c397b73851ff8816c0580eab92f1" "e2fd81495089dc09d14a88f29dfdff7645f213e2c03650ac2dd275de52a513de" "2a9039b093df61e4517302f40ebaf2d3e95215cb2f9684c8c1a446659ee226b9" "a622aaf6377fe1cd14e4298497b7b2cae2efc9e0ce362dade3a58c16c89e089c" "3da031b25828b115c6b50bb92a117f5c0bbd3d9d0e9ba5af3cd2cb9db80db1c2" "7f89ec3c988c398b88f7304a75ed225eaac64efa8df3638c815acc563dfd3b55" "2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" default)))
  '(fci-rule-color "#efefef")
  '(fill-nobreak-invisible nil)
  '(fish-indent-offset 2)
@@ -329,13 +331,7 @@ Version 2017-07-08"
 (global-set-key (kbd "M-w") 'xah-copy-line-or-region)
 ;;(define-key key-translation-map "\s-q" (kbd "\C-g"))
 (global-set-key (kbd "C-k") 'xah-cut-line-or-region)
-;;(global-set-key (kbd "s-v") 'yank)
-;;(global-set-key (kbd "s-p") 'yank-pop)
-;;(global-set-key (kbd "s-j") 'electric-newline-and-maybe-indent)
-;;(global-set-key (kbd "s-h") 'backward-delete-char-untabify)
-;;(global-set-key (kbd "s-/") 'undo)
-;;global-set-key
-;;(define-key key-translation-map "\s-q" (kbd "\C-g"))
+
 (define-key key-translation-map "\M-j" (kbd "<down>"))
 (define-key key-translation-map "\M-k" (kbd "<up>"))
 (define-key key-translation-map "\M-h" (kbd "<left>"))
@@ -434,6 +430,6 @@ Version 2016-11-22"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "unknown" :family "Monaco"))))
- '(flycheck-error ((t (:background "#ffdddd" :underline (:color "Red1" :style wave)))))
- '(font-lock-comment-face ((t (:foreground "magenta")))))
+ '(default ((t (:height 123 :family "Inconsolata")))))
+ ;;'(flycheck-error ((t (:background "#ffdddd" :underline (:color "Red1" :style wave)))))
+ ;;'(font-lock-comment-face ((t (:foreground "magenta")))))

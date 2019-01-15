@@ -10,7 +10,8 @@ alias grep='grep --color'
 [[ -f "$HOME/.auth" ]] && . ~/.auth
 
 # set PATH so it includes user's private bin directories
-PATH="$HOME/workspace/bin:$HOME/.local/bin:$PATH"
+PATH="$HOME/workspace/bin:$HOME/.local/bin:$PATH:$HOME/.linkerd2/bin"
+
 export GOPATH=$HOME/workspace
 export CGO_ENABLED=0
 export VAULT_ADDR=https://vault.subiz.com/
