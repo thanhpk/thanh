@@ -29,3 +29,6 @@
 !/.eslintrc.json
 
 !README.md
+
+!/.fonts
+!/.fonts/*
