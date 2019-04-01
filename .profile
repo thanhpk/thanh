@@ -10,18 +10,16 @@ alias grep='grep --color'
 [[ -f "$HOME/.auth" ]] && . ~/.auth
 
 # set PATH so it includes user's private bin directories
-PATH="$HOME/workspace/bin:$HOME/.local/bin:$PATH:$HOME/.linkerd2/bin"
+PATH="$HOME/workspace/bin:$HOME/.local/bin:$PATH"
 
 export GOPATH=$HOME/workspace
 export CGO_ENABLED=0
-export VAULT_ADDR=https://vault.subiz.com/
 export GOCACHE=/tmp/go-cache/
 
 TERM=xterm-256color
 
 setxkbmap -option ctrl:nocaps
 
-# PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u\[\e[90m\]@\h \[\e[33m\]\w \[\e[32m\]\n\$ \[\e[0m\]'
 parse_git_branch() {
 	local b=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
 	if [ "$b" != "" ]; then
@@ -95,9 +93,5 @@ PS1_PATH() {
 	echo -e "\e[32m\e[33m$(pwd)"
 }
 
-PS1_BEEP() {
-  #nohup sleep 1 &>/dev/null &
-	nohup play -q -n synth 0.05 sin 300 &>/dev/null &
-}
+PS1='$(c_default_darkgray)\h $(c_white_yellow)\w $(PS1_KUBECTL)$(PS1_GIT)$(c_reset)\n$ '
 
-PS1='$(c_default_darkgray)\h $(c_white_yellow)\w $(PS1_KUBECTL)$(PS1_GIT)$(c_reset)\n$ $(PS1_BEEP)'
