@@ -420,13 +420,13 @@ Version 2016-11-22"
 (global-set-key (kbd "M-.") 'dabbrev-expand)
 (global-set-key (kbd "C-.") 'undo)
 ;; (global-set-key (kbd "M-U") 'other-frame)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 110 :foundry "UKWN" :family "Latin Modern Mono"))))
- '(fixed-pitch ((t (:inherit default))))
- '(fixed-pitch-serif ((t (:inherit default)))))
- ;;'(flycheck-error ((t (:background "#ffdddd" :underline (:color "Red1" :style wave)))))
- ;;'(font-lock-comment-face ((t (:foreground "magenta")))))
+ '(default ((t (:weight ultra-bold :height 120 :foundry "UKWN" :family "Latin Modern Mono light"))))
+ '(variable-pitch ((t nil))))
+
+;;; .emacs ends here
