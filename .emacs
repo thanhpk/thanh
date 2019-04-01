@@ -7,8 +7,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-	 ["#ebdbb2" "#cc241d" "#98971a" "#d79921" "#458588" "#b16286" "#689d6a" "#3c3836"])
  '(blink-cursor-blinks 100000)
  '(blink-cursor-delay 0.001)
  '(blink-cursor-interval 0.1)
@@ -16,10 +14,6 @@
  '(c-basic-offset 2)
  '(column-number-mode t)
  '(compilation-message-face (quote default))
- '(custom-enabled-themes (quote (gruvbox-dark-hard)))
- '(custom-safe-themes
-	 (quote
-		("595617a3c537447aa7e76ce05c8d43146a995296ea083211225e7efc069c598f" "fd3c7bd752f48dcb7efa5f852ef858c425b1c397b73851ff8816c0580eab92f1" "e2fd81495089dc09d14a88f29dfdff7645f213e2c03650ac2dd275de52a513de" "2a9039b093df61e4517302f40ebaf2d3e95215cb2f9684c8c1a446659ee226b9" "a622aaf6377fe1cd14e4298497b7b2cae2efc9e0ce362dade3a58c16c89e089c" "3da031b25828b115c6b50bb92a117f5c0bbd3d9d0e9ba5af3cd2cb9db80db1c2" "7f89ec3c988c398b88f7304a75ed225eaac64efa8df3638c815acc563dfd3b55" "2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" default)))
  '(display-hourglass t)
  '(fci-rule-color "#efefef")
  '(fill-nobreak-invisible nil)
@@ -45,7 +39,7 @@
  '(nginx-indent-tabs-mode t)
  '(package-selected-packages
 	 (quote
-		(markdown-mode+ ag helm-ag atom-dark-theme gruvbox-theme protobuf-mode prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring govet dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go rainbow-delimiters jump-char avy cql-mode go-guru golint nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
+		(markdown-mode+ helm-ag protobuf-mode prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring govet dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char avy cql-mode go-guru golint nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -70,7 +64,6 @@
  '(tool-bar-mode nil)
  '(typescript-indent-level 2)
  '(vc-annotate-background nil)
- '(vc-annotate-very-old-color nil)
  '(visible-cursor t)
  '(window-divider-mode nil))
 
@@ -432,7 +425,7 @@ Version 2016-11-22"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 123 :family "Inconsolata"))))
+ '(default ((t (:height 110 :foundry "UKWN" :family "Latin Modern Mono"))))
  '(fixed-pitch ((t (:inherit default))))
  '(fixed-pitch-serif ((t (:inherit default)))))
  ;;'(flycheck-error ((t (:background "#ffdddd" :underline (:color "Red1" :style wave)))))
