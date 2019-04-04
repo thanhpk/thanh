@@ -1,6 +1,7 @@
 [user]
-	email = hhnnaahhtt@gmail.com
-	name = Phạm Kiều Thanh
+	email = thanhpk@live.com
+	name = Thanh Pham Kieu
+
 [core]
 	editor = vim
 
@@ -11,5 +12,6 @@ lg = !"git lg1"
 
 [http]
 	cookiefile = /home/thanh/.gitcookies
+
 [credential]
 	helper = store
