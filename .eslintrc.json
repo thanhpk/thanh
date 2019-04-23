@@ -191,13 +191,6 @@
     "wrap-iife": ["error", "any", { "functionPrototypeMethods": true }],
     "yield-star-spacing": ["error", "both"],
     "yoda": ["error", "never"],
-    "max-depth": ["error", { "max": 5 }],
-    "max-lines-per-function": [
-      "error",
-      {
-        "max": 50,
-        "skipComments": true
-      }
-    ]
+    "max-depth": ["error", { "max": 5 }]
   }
 }
