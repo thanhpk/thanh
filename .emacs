@@ -39,7 +39,7 @@
  '(nginx-indent-tabs-mode t)
  '(package-selected-packages
 	 (quote
-		(markdown-mode+ helm-ag protobuf-mode prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring govet dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char avy cql-mode go-guru golint nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
+		(markdown-mode+ protobuf-mode prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char avy cql-mode go-guru nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -316,6 +316,12 @@ Version 2017-07-08"
 
 (global-set-key (kbd "M-p") 'switch-to-buffer)
 (global-set-key (kbd "M-P") 'switch-to-buffer-other-window)
+
+ (eval-after-load 'web-mode
+	 '(define-key web-mode-map (kbd "M-;") 'move-end-of-line))
+
+(eval-after-load 'web-mode
+	 '(define-key web-mode-map (kbd "M-n") 'web-mode-navigate))
 
 (global-set-key (kbd "M-;") 'move-end-of-line)
 ;(global-set-key (kbd "s-m") 'move-beginning-of-line)
