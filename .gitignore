@@ -7,7 +7,7 @@
 !/.emacs.d/elpa/*
 !/.emacs.d/elpa/**/*
 !/.emacs.d
-
+!/.emacs.d/simple-theme.el
 !/.emacs
 
 # bash
