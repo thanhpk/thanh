@@ -1,6 +1,10 @@
+#!/bin/bash
 export KUBECTL_CONTEXT=kubernetes-admin@kubernetes
 alias kubectl='kubectl --context="$KUBECTL_CONTEXT"'
 alias stern='stern --context="$KUBECTL_CONTEXT"'
+
+# for up
+export KUBECTL="kubectl --context=kubernetes-admin@kubernetes"
 
 function usegke() {
 		export KUBECTL_CONTEXT=gke_subiz-version-4_us-central1-a_app-cluster-1

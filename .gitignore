@@ -27,9 +27,15 @@
 !/.kubernetes
 
 !/.eslintrc.json
+!/.tslint.json
+!/.jshintrc
 
 !README.md
 
 !/.fonts
 !/.fonts/*
 !/.fonts/*/*
+
+# linux
+!/.xinputrc
+!/.nanorc
