@@ -14,6 +14,7 @@
  '(c-basic-offset 2)
  '(column-number-mode t)
  '(compilation-message-face (quote default))
+ '(css-indent-offset 2)
  '(display-hourglass t)
  '(fci-rule-color "#efefef")
  '(fill-nobreak-invisible nil)
@@ -39,7 +40,7 @@
  '(nginx-indent-tabs-mode t)
  '(package-selected-packages
 	 (quote
-		(json-mode markdown-mode+ protobuf-mode prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char avy cql-mode go-guru nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
+		(xah-css-mode ag json-mode markdown-mode+ protobuf-mode prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char avy cql-mode go-guru nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -320,6 +321,8 @@ Version 2017-07-08"
  (eval-after-load 'web-mode
 	 '(define-key web-mode-map (kbd "M-;") 'move-end-of-line))
 
+(setq web-mode-enable-current-element-highlight t)
+
 (eval-after-load 'web-mode
 	 '(define-key web-mode-map (kbd "M-n") 'web-mode-navigate))
 
@@ -432,7 +435,7 @@ Version 2016-11-22"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:weight ultra-bold :height 120 :foundry "UKWN" :family "Latin Modern Mono light"))))
+ '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 135 :width normal :foundry "PfEd" :family "Inconsolata"))))
  '(variable-pitch ((t nil))))
 
 ;;; .emacs ends here
