@@ -1,6 +1,12 @@
 # . $HOME/.alias
 source /etc/environment
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 alias dgit='git --git-dir ~/.dotfiles/.git --work-tree=$HOME'
 alias ls='ls --color'
 alias grep='grep --color'
@@ -94,4 +100,3 @@ PS1_PATH() {
 }
 
 PS1='$(c_default_darkgray)\h $(c_white_yellow)\w $(PS1_KUBECTL)$(PS1_GIT)$(c_reset)\n$ '
-
