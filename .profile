@@ -14,6 +14,7 @@ alias grep='grep --color'
 [[ -f "$HOME/.kubernetes" ]] && . ~/.kubernetes
 [[ -f "$HOME/.gcp" ]] && . ~/.gcp
 [[ -f "$HOME/.auth" ]] && . ~/.auth
+[[ -f "$HOME/.androidstudio" ]] && . ~/.androidstudio
 
 # set PATH so it includes user's private bin directories
 PATH="$HOME/workspace/bin:$HOME/.local/bin:$PATH"
