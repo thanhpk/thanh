@@ -19,7 +19,6 @@
  '(custom-safe-themes
 	 (quote
 		("0e456b63cdd54d0144d8586864ec93f89e4f7bfb4c17e1f00739c7edd1f2d8dd" "0e1d55814d2985615cb314418c464962e7e7028fe71d29fc14556377e010f4bb" "bb19e479f002571e936aa7ed6bc73b03267f884c64f9673e5d00db1e7328e578" "8d8af8ae9b2f9634dd88604893a984107235bf9faf7e8d0d8e954a2bc1ade916" "80a3be9b00940f3509e90767b4f337356adb0685f837a8e9a6ab4b89e8bec06a" "6dd274f89807928fbc6030b0517b42dcf344119fadadc4b0e0b35ba31be036b0" "90d3b6a715032856fd7e59b7a1e097cd1d6ea5f081550b87ccdd0e3a94c3f260" "c24e4a9b8cccae14a81211ac34b1694949c8b7395c7b800ec9adfcd13c5e8038" "53bd4739853d80ab06722fa78f5084c3f815a4c230d01789ae7454275442588f" "95fbbe042f246518daca20a264d673dfe6874a2e9149181bff13b1924ad12d4f" "c186214f0d24e58c7a17861a165a1c0c08a228053747c9ccae5977f97452d324" default)))
->>>>>>> fix simple theme
  '(display-hourglass t)
  '(fci-rule-color "#efefef")
  '(fill-nobreak-invisible nil)
@@ -439,7 +438,7 @@ Version 2016-11-22"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 135 :width normal :foundry "PfEd" :family "Inconsolata"))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 125 :width normal :family "Latin modern mono"))))
  '(variable-pitch ((t nil))))
 
 ;;; .Emacs ends here
