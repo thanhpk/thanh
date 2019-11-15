@@ -193,6 +193,6 @@
     "yoda": ["error", "never"],
     "max-depth": ["error", { "max": 5 }],
     "max-len": "off",
-    "no-console": { "allow": ["log", "error"] }
+    "no-console": "off"
   }
 }
