@@ -40,7 +40,7 @@
  '(nginx-indent-tabs-mode t)
  '(package-selected-packages
 	 (quote
-		(xah-css-mode ag json-mode markdown-mode+ protobuf-mode prettier-js fish-mode flycheck ido-vertical-mode pug-mode go-imports direx dired+ yaml-mode persistent-scratch scratches dockerfile-mode python-docstring dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer typescript-mode mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char avy cql-mode nginx-mode go-complete dired-rainbow rainbow-mode web-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile tide markdown-mode go-mode)))
+		(avy markdown-mode yaml-mode go-mode json-mode protobuf-mode prettier-js flycheck ido-vertical-mode pug-mode direx dired+ persistent-scratch scratches python-docstring dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char cql-mode nginx-mode go-complete dired-rainbow rainbow-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -377,4 +377,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:height 115 :family "Cascadia Mono")))))
+ '(default ((t (:slant normal :weight normal :height 105 :width normal :foundry "SAJA" :family "Cascadia Mono")))))
