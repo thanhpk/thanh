@@ -3,11 +3,8 @@
 
 # .emacs.d/elpa/* only
 !/.emacs.d/
-!/.emacs.d/elpa
-!/.emacs.d/elpa/*
-!/.emacs.d/elpa/**/*
-!/.emacs.d
-!/.emacs.d/simple-theme.el
+!/.emacs.d/*
+!/.emacs.d/*/*
 !/.emacs
 
 # bash
