@@ -54,7 +54,6 @@
 (eval-after-load 'magit '(require 'setup-magit))
 
 (require 'setup-yasnippet)
-(require 'setup-html-mode)
 (require 'setup-yaml-mode)
 (require 'xah)
 (require 'setup-minibuffer)

@@ -23,6 +23,7 @@
  '(fringe-mode 0 nil (fringe))
  '(global-linum-mode t)
  '(highlight-changes-colors (quote ("#FD5FF0" "#AE81FF")))
+ '(ido-use-filename-at-point nil)
  '(ido-vertical-show-count t)
  '(indent-tabs-mode t)
  '(js-indent-level 2)
@@ -36,7 +37,7 @@
  '(nginx-indent-tabs-mode t)
  '(package-selected-packages
 	 (quote
-		(avy markdown-mode yaml-mode go-mode json-mode protobuf-mode prettier-js flycheck ido-vertical-mode pug-mode direx dired+ persistent-scratch scratches python-docstring dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char cql-mode nginx-mode go-complete dired-rainbow rainbow-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile)))
+		(js2-mode avy markdown-mode yaml-mode go-mode json-mode protobuf-mode prettier-js flycheck ido-vertical-mode pug-mode direx dired+ persistent-scratch scratches python-docstring dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char cql-mode nginx-mode go-complete dired-rainbow rainbow-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -46,24 +47,6 @@
  '(py-indent-tabs-mode t)
  '(py-smart-indentation t)
  '(python-indent-offset 2)
- '(scala-indent:step 2)
- '(scroll-bar-mode nil)
- '(semantic-stickyfunc-indent-string "")
- '(sh-basic-offset 2)
- '(show-paren-mode t)
- '(sml/active-background-color "#34495e")
- '(sml/active-foreground-color "#ecf0f1")
- '(sml/inactive-background-color "#dfe4ea")
- '(sml/inactive-foreground-color "#34495e")
- '(standard-indent 2)
- '(tab-stop-list (quote (2 4 6 8)))
- '(tab-width 2)
- '(tool-bar-mode nil)
- '(typescript-indent-level 2)
- '(vc-annotate-background nil)
- '(visible-cursor t)
- '(window-divider-mode nil)
- '(ido-use-filename-at-point nil)
  '(safe-local-variable-values
 	 (quote
 		((eval font-lock-add-keywords nil
@@ -92,7 +75,28 @@
 						(("defexamples\\| => "
 							(0
 							 (quote font-lock-keyword-face))))))
-		 (encoding . utf-8)))))
+		 (encoding . utf-8))))
+ '(scala-indent:step 2)
+ '(scroll-bar-mode nil)
+ '(semantic-stickyfunc-indent-string "")
+ '(sh-basic-offset 2)
+ '(show-paren-mode t)
+ '(sml/active-background-color "#34495e")
+ '(sml/active-foreground-color "#ecf0f1")
+ '(sml/inactive-background-color "#dfe4ea")
+ '(sml/inactive-foreground-color "#34495e")
+ '(standard-indent 2)
+ '(tab-stop-list (quote (2 4 6 8)))
+ '(tab-width 2)
+ '(tool-bar-mode nil)
+ '(typescript-indent-level 2)
+ '(vc-annotate-background nil)
+ '(visible-cursor t)
+ '(window-divider-mode nil))
 
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(default ((t (:slant normal :weight normal :height 115 :width normal :foundry "SAJA" :family "Cascadia Mono")))))

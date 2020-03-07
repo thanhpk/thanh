@@ -68,7 +68,6 @@
 ;; Use M-w for copy-line if no active region
 (global-set-key (kbd "M-w") 'save-region-or-current-line)
 (global-set-key (kbd "s-w") 'save-region-or-current-line)
-(global-set-key (kbd "M-W") (λ (save-region-or-current-line 1)))
 
 (global-set-key (kbd "M-Z") (lambda (char) (interactive "cZap to char: ") (zap-to-char 1 char)))
 (global-set-key (kbd "s-Z") (lambda (char) (interactive "cZap to char backwards: ") (zap-to-char -1 char)))
@@ -107,9 +106,6 @@
 
 (global-set-key (kbd "s-y") 'bury-buffer)
 
-;; Revert without any fuss
-(global-set-key (kbd "M-<escape>") (λ (revert-buffer t t)))
-
 ;; Edit file with sudo
 (global-set-key (kbd "M-s e") 'sudo-edit)
 
@@ -126,9 +122,6 @@
 
 ;; Add region to *multifile*
 (global-set-key (kbd "C-!") 'mf/mirror-region-in-multifile)
-
-;; Indentation help
-(global-set-key (kbd "M-j") (λ (join-line -1)))
 
 ;; Help should search more than just commands
 (global-set-key (kbd "<f1> a") 'apropos)
@@ -169,11 +162,6 @@
 (global-set-key (kbd "C-S-s") 'isearch-forward)
 (global-set-key (kbd "C-S-r") 'isearch-backward)
 
-;; Move more quickly
-(global-set-key (kbd "C-S-n") (λ (ignore-errors (next-line 5))))
-(global-set-key (kbd "C-S-p") (λ (ignore-errors (previous-line 5))))
-(global-set-key (kbd "C-S-f") (λ (ignore-errors (forward-char 5))))
-(global-set-key (kbd "C-S-b") (λ (ignore-errors (backward-char 5))))
 
 ;; Convenience on ThinkPad Keyboard: Use back/forward as pg up/down
 (global-set-key (kbd "<XF86Back>") 'scroll-down)
@@ -239,8 +227,8 @@
 (global-set-key (kbd "C-x C-k") 'delete-current-buffer-file)
 
 ;; Jump from file to containing directory
-(global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")
-(global-set-key (kbd "C-x M-j") '(λ (dired-jump 1)))
+;;(global-set-key (kbd "C-x C-j") 'dired-jump) (autoload 'dired-jump "dired")
+;;(global-set-key (kbd "C-x M-j") '(λ (dired-jump 1)))
 
 ;; Multi-occur
 (global-set-key (kbd "M-s m") 'multi-occur)
