@@ -18,8 +18,8 @@
 
 ;; C-a is nicer in dired if it moves back to start of files
 (defun dired-back-to-start-of-files ()
-  (interactive)
-  (backward-char (- (current-column) 2)))
+	(interactive)
+	(backward-char (- (current-column) 2)))
 
 ;; Enable 'a'-keybinding in dired - which opens the file and closes dired buffer
 
@@ -29,9 +29,9 @@
 (define-key dired-mode-map (kbd "C-x C-k") 'dired-do-delete)
 
 (eval-after-load "wdired"
-  '(progn
-     (define-key wdired-mode-map (kbd "C-a") 'dired-back-to-start-of-files)
-     (define-key wdired-mode-map (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
-     (define-key wdired-mode-map (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)))
+	'(progn
+		 (define-key wdired-mode-map (kbd "C-a") 'dired-back-to-start-of-files)
+		 (define-key wdired-mode-map (vector 'remap 'beginning-of-buffer) 'dired-back-to-top)
+		 (define-key wdired-mode-map (vector 'remap 'end-of-buffer) 'dired-jump-to-bottom)))
 
 (provide 'setup-dired)

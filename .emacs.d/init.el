@@ -1,9 +1,8 @@
 ;; No splash screen please ... jeez
 (setq inhibit-startup-message t)
 
-(setq settings-dir (expand-file-name "settings" user-emacs-directory))
-
 ;; Set up load path
+(setq settings-dir (expand-file-name "settings" user-emacs-directory))
 (add-to-list 'load-path settings-dir)
 
 ;; Setup packages
@@ -11,8 +10,8 @@
 
 ;; Remove security vulnerability
 (eval-after-load "enriched"
-  '(defun enriched-decode-display-prop (start end &optional param)
-     (list start end)))
+	'(defun enriched-decode-display-prop (start end &optional param)
+		 (list start end)))
 
 (defalias 'list-buffers 'ibuffer) ; make ibuffer default
 
@@ -41,7 +40,7 @@
 
 ;; Write all autosave files in the tmp dir
 (setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+			`((".*" ,temporary-file-directory t)))
 
 ;; Don't write lock-files, I'm the only one here
 (setq create-lockfiles nil)
@@ -63,8 +62,8 @@
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
 (dolist (file (directory-files defuns-dir t "\\w+"))
-  (when (file-regular-p file)
-    (load file)))
+	(when (file-regular-p file)
+		(load file)))
 
 ;; Don't use expand-region fast keys
 (setq expand-region-fast-keys-enabled nil)
@@ -86,7 +85,7 @@
 ;; Emacs server
 (require 'server)
 (unless (server-running-p)
-  (server-start))
+	(server-start))
 
 ;; Run at full power please
 (put 'downcase-region 'disabled nil)
