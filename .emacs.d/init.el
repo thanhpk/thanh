@@ -29,6 +29,8 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
+(require 'appearance)
+
 ;; Write backup files to own directory
 ;; create backup file in tmp directory instead of current directory
 (setq backup-directory-alist '(("." . "~/tmp"))

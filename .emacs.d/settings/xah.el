@@ -119,11 +119,13 @@
 	(scroll-up-line)
 	(scroll-up-line)
 	(scroll-up-line)
+	(scroll-up-line)
 	(scroll-up-line))
 
 (defun scroll-down-line-3 ()
 	"Upcase the last letter of the word at point."
 	(interactive)
+	(scroll-down-line)
 	(scroll-down-line)
 	(scroll-down-line)
 	(scroll-down-line)
