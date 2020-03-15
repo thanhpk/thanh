@@ -130,23 +130,6 @@
 (global-set-key (kbd "C-c C-e") 'eval-and-replace)
 (global-set-key (kbd "M-s-e") 'eval-and-replace)
 
-;; Navigation bindings
-(global-set-key [remap goto-line] 'goto-line-with-feedback)
-
-(global-set-key (kbd "<prior>") 'beginning-of-buffer)
-(global-set-key (kbd "<home>") 'beginning-of-buffer)
-(global-set-key (kbd "<next>") 'end-of-buffer)
-(global-set-key (kbd "<end>") 'end-of-buffer)
-(global-set-key (kbd "M-p") 'backward-paragraph)
-(global-set-key (kbd "M-n") 'forward-paragraph)
-(global-set-key (kbd "H-n") 'goto-next-line-with-same-indentation)
-(global-set-key (kbd "H-p") 'goto-prev-line-with-same-indentation)
-
-(global-set-key (kbd "M-<up>") 'smart-up)
-(global-set-key (kbd "M-<down>") 'smart-down)
-(global-set-key (kbd "M-<left>") 'smart-backward)
-(global-set-key (kbd "M-<right>") 'smart-forward)
-
 ;; Webjump let's you quickly search google, wikipedia, emacs wiki
 (global-set-key (kbd "C-x g") 'webjump)
 (global-set-key (kbd "C-x M-g") 'browse-url-at-point)
@@ -258,7 +241,7 @@
 (global-set-key (kbd "M-o k") 'kill-line)
 (global-set-key (kbd "M-o h") 'mark-whole-buffer)
 (global-set-key (kbd "M-o m") 'rectangle-mark-mode)
-(global-set-key (kbd "M-o f") 'dired-jump)
+; (global-set-key (kbd "M-o f") 'dired-jump)
 (global-set-key (kbd "M-o j") 'godef-jump-other-window)
 (global-set-key (kbd "M-o c") 'delete-window)
 
@@ -288,6 +271,7 @@
 (global-set-key (kbd "M-v") 'switch-to-previous-buffer)
 (global-set-key (kbd "M-q") 'backward-kill-word)
 (global-set-key (kbd "M-f") 'dired-jump)
+(autoload 'dired-jump "dired")
 (global-set-key (kbd "C-b") 'ido-kill-buffer)
 (global-set-key (kbd "C-a") 'save-buffer)
 (global-set-key (kbd "M-0") 'back-to-identation)

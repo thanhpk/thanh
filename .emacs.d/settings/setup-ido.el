@@ -8,7 +8,8 @@
 			ido-auto-merge-work-directories-length -1
 			ido-create-new-buffer 'always
 		  ido-use-filename-at-point nil
-			ido-max-prospects 10)
+			ido-max-prospects 10
+			ido-vertical-show-count t)
 
 ;; Try out flx-ido for better flex matching between words
 (require 'flx-ido)
@@ -19,6 +20,7 @@
 ;; flx-ido looks better with ido-vertical-mode
 (require 'ido-vertical-mode)
 (ido-vertical-mode t)
+
 
 (setq ido-decorations (quote ("\n🔪 " "" "\n   " "\n   ..." "" "..." " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
 (defun ido-disable-line-truncation ()
