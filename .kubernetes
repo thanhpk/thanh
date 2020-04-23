@@ -1,4 +1,5 @@
 #!/bin/bash
+
 export KUBECTL_CONTEXT=kind-subiz-dev
 alias kubectl='kubectl --context="$KUBECTL_CONTEXT"'
 alias stern='stern --context="$KUBECTL_CONTEXT"'
@@ -7,15 +8,11 @@ alias stern='stern --context="$KUBECTL_CONTEXT"'
 export KUBECTL="kubectl --context=kind-subiz-dev"
 
 function usegke() {
-		export KUBECTL_CONTEXT=gke_subiz-version-4_us-central1-a_app-cluster-1
-}
-
-function usegke2() {
-		export KUBECTL_CONTEXT=gke_subiz-version-4_us-central1-a_app-cluster-2
+	export KUBECTL_CONTEXT=gke_subiz-version-4_us-central1-a_app-cluster-1
 }
 
 function usedev() {
-		export KUBECTL_CONTEXT=kind-subiz-dev
+	export KUBECTL_CONTEXT=kind-subiz-dev
 }
 
 get_current_kubectl_context() {
@@ -31,7 +28,3 @@ get_current_kubectl_context() {
 		fi
 		echo $a
 }
-
-if hash kubectl 2>/dev/null; then
-		source <(kubectl completion bash)
-fi
