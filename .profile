@@ -6,9 +6,8 @@
 [[ -f "$HOME/.androidstudio" ]] && . ~/.androidstudio
 
 # set PATH so it includes user's private bin directories
-PATH="$HOME/workspace/bin:$HOME/.local/bin:$PATH"
+PATH="$HOME/go/bin:$HOME/.local/bin:$PATH"
 
-export GOPATH=$HOME/workspace
 export CGO_ENABLED=0
 export GOCACHE=/tmp/go-cache/
 

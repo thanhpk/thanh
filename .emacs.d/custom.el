@@ -33,7 +33,7 @@
  '(nginx-indent-tabs-mode t)
  '(package-selected-packages
 	 (quote
-		(js2-mode avy markdown-mode yaml-mode go-mode json-mode protobuf-mode prettier-js flycheck ido-vertical-mode pug-mode direx dired+ persistent-scratch scratches python-docstring dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char cql-mode nginx-mode go-complete dired-rainbow rainbow-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile)))
+		(flx-ido smex browse-kill-ring s yasnippet js2-mode avy markdown-mode yaml-mode go-mode json-mode protobuf-mode prettier-js flycheck ido-vertical-mode pug-mode direx dired+ persistent-scratch scratches python-docstring dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char cql-mode nginx-mode go-complete dired-rainbow rainbow-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
