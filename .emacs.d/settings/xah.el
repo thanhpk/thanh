@@ -132,21 +132,6 @@
 	(scroll-down-line)
 	(scroll-down-line))
 
-(defun move-to-next-line ()
-	"Move to next line."
-	(interactive)
-	(move-end-of-line 1)
-	(open-line 1)
-	(forward-line)
-	(indent-for-tab-command))
-
-(defun move-to-prev-line ()
-	"Move to next line."
-	(interactive)
-	(move-beginning-of-line 1)
-	(open-line 1)
-	(indent-for-tab-command))
-
 (defun mark-whole-word ()
 	"Select current word."
 	(interactive)
