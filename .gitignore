@@ -10,6 +10,7 @@
 # bash
 !/.bashrc
 !/.profile
+!/.bash_aliases
 
 !/.gitconfig
 
