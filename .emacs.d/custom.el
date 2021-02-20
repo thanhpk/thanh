@@ -33,7 +33,7 @@
  '(nginx-indent-tabs-mode t)
  '(package-selected-packages
 	 (quote
-		(flx-ido smex browse-kill-ring s yasnippet js2-mode avy markdown-mode yaml-mode go-mode json-mode protobuf-mode prettier-js flycheck ido-vertical-mode pug-mode direx dired+ persistent-scratch scratches python-docstring dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char cql-mode nginx-mode go-complete dired-rainbow rainbow-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile)))
+		(forge diff-hl dockerfile-mode flx-ido smex browse-kill-ring s yasnippet js2-mode avy markdown-mode yaml-mode go-mode json-mode protobuf-mode prettier-js flycheck ido-vertical-mode pug-mode direx dired+ persistent-scratch scratches python-docstring dired-icon diminish gitignore-mode toml-mode go go-add-tags go-direx go-dlv go-snippets go-stacktracer mode-icons python-mode pyvenv auto-dim-other-buffers ob-go jump-char cql-mode nginx-mode go-complete dired-rainbow rainbow-mode go-impl go-errcheck magit ## list-packages-ext helm-projectile)))
  '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(pos-tip-background-color "#FFFACE")
  '(pos-tip-foreground-color "#272822")
@@ -94,4 +94,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:slant normal :weight normal :height 115 :width normal :foundry "SAJA" :family "Cascadia Mono")))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 135 :width normal :foundry "SAJA" :family "Cascadia Mono")))))
