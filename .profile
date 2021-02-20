@@ -2,7 +2,6 @@
 
 [[ -f "$HOME/.kubernetes" ]] && . ~/.kubernetes
 [[ -f "$HOME/.gcp" ]] && . ~/.gcp
-[[ -f "$HOME/.auth" ]] && . ~/.auth
 [[ -f "$HOME/.androidstudio" ]] && . ~/.androidstudio
 
 # set PATH so it includes user's private bin directories
@@ -13,7 +12,12 @@ export GOCACHE=/tmp/go-cache/
 
 TERM=xterm-256color
 
-setxkbmap -option ctrl:nocaps
+__bg () {
+	# map caplock to ctrl
+  setxkbmap -query | grep options | tr -s " " "\n" | sed -n 2p | grep -q "ctrl:nocaps" && true || setxkbmap -option ctrl:nocaps
+}
+
+(__bg &)
 
 parse_git_branch() {
 	local b=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
@@ -26,6 +30,10 @@ parse_git_branch() {
 
 c_red_white() {
 	echo -e "\e[41m\e[97m"
+}
+
+c_red_yellow() {
+	echo -e "\e[0m\e[93m"
 }
 
 c_white_yellow() {
@@ -60,26 +68,20 @@ c_reset() {
 	echo -e "\e[0m"
 }
 
+PS1_GIT() {
+	echo -e "$(c_green_white)$(parse_git_branch)$(c_reset)"
+}
+
 PS1_KUBECTL() {
 	if hash kubectl 2>/dev/null; then
-		if [ "$(get_current_kubectl_context)" == "gke" ]; then
+		if [ "$(get_current_kubectl_context)" == "prod" ]; then
 			echo -e "$(c_red_white)$(get_current_kubectl_context)$(c_reset)"
-		else
+		fi
+
+		if [ "$(get_current_kubectl_context)" == "dev" ]; then
 			echo -e "$(c_black_blue)$(get_current_kubectl_context)$(c_reset) "
 		fi
 	fi
 }
 
-PS1_GIT() {
-	echo -e "$(c_green_white)$(parse_git_branch)$(c_reset)"
-}
-
-PS1_HOST() {
-  if [ `hostname` == "xps" ]; then
-		echo "💀"
-	else
-		echo `hostname`
-	fi
-}
-
-PS1='$(c_default_lightgray)$(PS1_HOST) $(c_white_yellow)\w $(PS1_KUBECTL)$(PS1_GIT)$(c_reset)\n$ '
+PS1='$(c_default_lightgray)$(hostname)$(c_reset) $(c_white_yellow)\w $(PS1_KUBECTL)$(PS1_GIT)$(c_reset)\n$ '

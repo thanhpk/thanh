@@ -1,30 +1,31 @@
 #!/bin/bash
 
-export KUBECTL_CONTEXT=kind-subiz-dev
+export KUBECTL_CONTEXT=gke_subiz-version-4_asia-southeast1-a_subiz
 alias kubectl='kubectl --context="$KUBECTL_CONTEXT"'
 alias stern='stern --context="$KUBECTL_CONTEXT"'
 
 # for up
-export KUBECTL="kubectl --context=kind-subiz-dev"
+export KUBECTL="kubectl --context=gke_subiz-version-4_asia-southeast1-a_dev"
 
 function usegke() {
-	export KUBECTL_CONTEXT=gke_subiz-version-4_us-central1-a_app-cluster-1
+	export KUBECTL_CONTEXT=gke_subiz-version-4_asia-southeast1-a_subiz
 }
 
 function usedev() {
-	export KUBECTL_CONTEXT=kind-subiz-dev
+	export KUBECTL_CONTEXT=gke_subiz-version-4_asia-southeast1-a_dev
 }
 
 get_current_kubectl_context() {
-		a=$(echo $KUBECTL_CONTEXT | cut -d '@' -f 2 | cut -b 1-5)
+	a=$(echo $KUBECTL_CONTEXT)
 
-		if [ "$a" == "kind-" ]; then
-				echo 'dev'
-				return
-		fi
-		if [ "$a" == "gke_s" ]; then
-				echo 'gke'
-				return
-		fi
-		echo $a
+	if [ "$a" == "gke_subiz-version-4_asia-southeast1-a_dev" ]; then
+		echo 'dev'
+		return
+	fi
+
+	if [ "$a" == "gke_subiz-version-4_asia-southeast1-a_subiz" ]; then
+		echo 'prod'
+		return
+	fi
+	echo $a
 }
